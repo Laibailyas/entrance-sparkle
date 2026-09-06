@@ -12,7 +12,7 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 function WordsUp({ text, className, delay = 0 }: { text: string; className?: string; delay?: number }) {
   return (
-    <span className={`block overflow-hidden ${className ?? ""}`}>
+    <span className={`block overflow-hidden whitespace-nowrap ${className ?? ""}`}>
       <motion.span
         className="block"
         initial={{ y: "110%", rotate: 4 }}
@@ -71,7 +71,7 @@ export function Hero() {
       </motion.header>
 
       {/* collage stage */}
-      <div className="relative mx-auto grid w-full max-w-[1600px] flex-1 grid-cols-1 items-center gap-10 px-6 py-14 lg:grid-cols-[1fr_minmax(420px,0.9fr)_1fr] lg:gap-6">
+      <div className="relative mx-auto grid w-full max-w-[1600px] flex-1 grid-cols-1 items-center gap-10 px-6 py-10 lg:grid-cols-[0.85fr_minmax(560px,1.05fr)_0.85fr] lg:gap-4">
         {/* left cluster */}
         <motion.div style={{ x: layerA, y: layerAy }} className="relative order-2 lg:order-1">
           <motion.div
@@ -127,7 +127,7 @@ export function Hero() {
             Together, we can
           </motion.span>
 
-          <h1 className="mt-6 font-display text-[clamp(2.75rem,7.2vw,5.6rem)] leading-[0.92] tracking-tight">
+          <h1 className="mt-6 font-display text-[clamp(2.4rem,6.4vw,5.4rem)] leading-[0.92] tracking-tight">
             <WordsUp text="Let your feed," delay={0.35} />
             <WordsUp text="feed someone" className="text-flare" delay={0.5} />
           </h1>
