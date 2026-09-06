@@ -54,18 +54,16 @@ export function Hero() {
         transition={{ duration: 0.8, ease }}
         className="relative z-30 border-b border-ink/10"
       >
-        <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5">
-          <a href="/" data-cursor-hover className="flex items-center gap-3">
-            <span className="grid h-8 w-8 place-items-center rounded-full bg-ink text-paper">
-              <Play className="h-3.5 w-3.5 fill-current" />
-            </span>
-            <span className="font-display text-3xl tracking-tight">DOTTIS</span>
-          </a>
-          <nav className="hidden gap-8 font-stamp text-xs uppercase tracking-[0.2em] text-ink/70 md:flex">
-            <a data-cursor-hover className="transition-colors hover:text-flare" href="#causes">Causes</a>
-            <a data-cursor-hover className="transition-colors hover:text-flare" href="#how">How it works</a>
-            <a data-cursor-hover className="transition-colors hover:text-flare" href="#impact">Impact</a>
-          </nav>
+        <div className="mx-auto flex max-w-[1600px] items-center px-6 py-5">
+          <motion.a
+            href="/"
+            data-cursor-hover
+            whileHover={{ scale: 1.05, rotate: -1 }}
+            transition={{ type: "spring", stiffness: 320, damping: 16 }}
+            className="inline-block"
+          >
+            <img src={logo} alt="Dotis" width={1038} height={357} className="h-8 w-auto md:h-9" />
+          </motion.a>
         </div>
       </motion.header>
 
