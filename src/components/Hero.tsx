@@ -3,10 +3,9 @@ import { useEffect } from "react";
 import { Apple, ArrowDown, Play } from "lucide-react";
 import { TiltPhoto } from "./TiltPhoto";
 import { PartnerMarquee } from "./PartnerMarquee";
-import firefighter from "@/assets/firefighter.jpg";
-import dog from "@/assets/dog.jpg";
-import volunteer from "@/assets/volunteer.jpg";
-import koala from "@/assets/koala.jpg";
+import logo from "@/assets/logo.png";
+import collageLeft from "@/assets/collage-left.png.asset.json";
+import collageRight from "@/assets/collage-right.png.asset.json";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
