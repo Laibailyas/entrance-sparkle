@@ -69,7 +69,7 @@ export function TiltPhoto({
           width={width}
           height={height}
           loading={eager ? "eager" : "lazy"}
-          className="block h-full w-full object-cover grayscale contrast-[1.08]"
+          className={`block h-full w-full object-contain ${bare ? "" : "object-cover grayscale contrast-[1.08]"}`}
         />
         <motion.span
           aria-hidden
