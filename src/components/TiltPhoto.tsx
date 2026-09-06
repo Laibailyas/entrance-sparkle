@@ -49,7 +49,7 @@ export function TiltPhoto({
     >
       <motion.div
         data-cursor-hover
-        className="photo-frame relative [transform-style:preserve-3d]"
+        className={`relative [transform-style:preserve-3d] ${bare ? "" : "photo-frame"}`}
         style={{ rotateX, rotateY }}
         whileHover={{ scale: 1.035, z: 40 }}
         transition={{ type: "spring", stiffness: 220, damping: 20 }}
