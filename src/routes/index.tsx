@@ -1,24 +1,34 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Hero } from "@/components/Hero";
+import { CustomCursor } from "@/components/CustomCursor";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Dottis — Let your feed, feed someone" },
+      {
+        name: "description",
+        content:
+          "Share a small slice of your unused internet and generate donations for causes that need it most — at no cost to you.",
+      },
+      { property: "og:title", content: "Dottis — Let your feed, feed someone" },
+      {
+        property: "og:description",
+        content:
+          "Turn unused bandwidth into donations for wildlife, disaster relief and food aid. Free to install.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main>
+      <CustomCursor />
+      <Hero />
+    </main>
   );
 }
