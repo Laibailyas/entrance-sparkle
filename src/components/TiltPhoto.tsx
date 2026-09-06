@@ -29,6 +29,7 @@ export function TiltPhoto({
   delay = 0,
   from = {},
   eager = false,
+  bare = false,
   children,
 }: Props) {
   const px = useMotionValue(0);
