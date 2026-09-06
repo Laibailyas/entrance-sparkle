@@ -129,7 +129,7 @@ export function Hero() {
               transition={{ type: "spring", stiffness: 320, damping: 18 }}
               className="inline-flex items-center gap-4 rounded-full bg-ink py-3.5 pl-8 pr-3.5 text-lg text-paper [transform-style:preserve-3d]"
             >
-              Install Dottis
+              Install Dotis
               <span className="grid h-9 w-9 place-items-center rounded-full bg-flare">
                 <Play className="h-4 w-4 fill-current text-paper" />
               </span>
