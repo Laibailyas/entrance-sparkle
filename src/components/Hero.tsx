@@ -3,10 +3,9 @@ import { useEffect } from "react";
 import { Apple, ArrowDown, Play } from "lucide-react";
 import { TiltPhoto } from "./TiltPhoto";
 import { PartnerMarquee } from "./PartnerMarquee";
-import firefighter from "@/assets/firefighter.jpg";
-import dog from "@/assets/dog.jpg";
-import volunteer from "@/assets/volunteer.jpg";
-import koala from "@/assets/koala.jpg";
+import logo from "@/assets/logo.png";
+import collageLeft from "@/assets/collage-left.png.asset.json";
+import collageRight from "@/assets/collage-right.png.asset.json";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -55,18 +54,16 @@ export function Hero() {
         transition={{ duration: 0.8, ease }}
         className="relative z-30 border-b border-ink/10"
       >
-        <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5">
-          <a href="/" data-cursor-hover className="flex items-center gap-3">
-            <span className="grid h-8 w-8 place-items-center rounded-full bg-ink text-paper">
-              <Play className="h-3.5 w-3.5 fill-current" />
-            </span>
-            <span className="font-display text-3xl tracking-tight">DOTTIS</span>
-          </a>
-          <nav className="hidden gap-8 font-stamp text-xs uppercase tracking-[0.2em] text-ink/70 md:flex">
-            <a data-cursor-hover className="transition-colors hover:text-flare" href="#causes">Causes</a>
-            <a data-cursor-hover className="transition-colors hover:text-flare" href="#how">How it works</a>
-            <a data-cursor-hover className="transition-colors hover:text-flare" href="#impact">Impact</a>
-          </nav>
+        <div className="mx-auto flex max-w-[1600px] items-center px-6 py-5">
+          <motion.a
+            href="/"
+            data-cursor-hover
+            whileHover={{ scale: 1.05, rotate: -1 }}
+            transition={{ type: "spring", stiffness: 320, damping: 16 }}
+            className="inline-block"
+          >
+            <img src={logo} alt="Dotis" width={1038} height={357} className="h-8 w-auto md:h-9" />
+          </motion.a>
         </div>
       </motion.header>
 
@@ -74,42 +71,18 @@ export function Hero() {
       <div className="relative mx-auto grid w-full max-w-[1600px] flex-1 grid-cols-1 items-center gap-10 px-6 py-10 lg:grid-cols-[0.8fr_minmax(600px,1.15fr)_0.8fr] lg:gap-4">
         {/* left cluster */}
         <motion.div style={{ x: layerA, y: layerAy }} className="relative order-2 lg:order-1">
-          <motion.div
-            aria-hidden
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.15, ease }}
-            className="absolute -top-6 left-24 h-48 w-48 rounded-full bg-flare md:h-60 md:w-60"
-          />
-          <motion.div
-            aria-hidden
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="absolute right-2 top-10 hidden h-28 w-40 bg-[repeating-linear-gradient(0deg,var(--ink)_0_4px,transparent_4px_9px)] md:block"
-          />
           <TiltPhoto
-            src={firefighter}
-            alt="Firefighter facing a burning forest as a helicopter drops water"
-            width={900}
-            height={1200}
+            src={collageLeft.url}
+            alt="Collage of a firefighter facing a wildfire and a rescued dog held by a volunteer"
+            width={1127}
+            height={1408}
             eager
-            depth={16}
-            rotate={-2}
+            bare
+            depth={14}
+            rotate={-1.5}
             delay={0.25}
             from={{ x: -70, rotate: -8 }}
-            className="relative z-10 w-[86%] max-w-[460px]"
-          />
-          <TiltPhoto
-            src={dog}
-            alt="Rescued dog held close by a volunteer"
-            width={1000}
-            height={800}
-            depth={22}
-            rotate={5}
-            delay={0.55}
-            from={{ y: 90, rotate: 14 }}
-            className="relative z-20 -mt-24 ml-[32%] w-[70%] max-w-[370px]"
+            className="relative z-10 mx-auto w-full max-w-[520px]"
           />
         </motion.div>
 
@@ -156,7 +129,7 @@ export function Hero() {
               transition={{ type: "spring", stiffness: 320, damping: 18 }}
               className="inline-flex items-center gap-4 rounded-full bg-ink py-3.5 pl-8 pr-3.5 text-lg text-paper [transform-style:preserve-3d]"
             >
-              Install Dottis
+              Install Dotis
               <span className="grid h-9 w-9 place-items-center rounded-full bg-flare">
                 <Play className="h-4 w-4 fill-current text-paper" />
               </span>
@@ -216,42 +189,18 @@ export function Hero() {
 
         {/* right cluster */}
         <motion.div style={{ x: layerB, y: layerBy }} className="relative order-3">
-          <motion.div
-            aria-hidden
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.3, ease }}
-            className="absolute right-2 top-4 h-24 w-40 bg-flare"
-          />
-          <motion.div
-            aria-hidden
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.6, ease }}
-            className="absolute bottom-20 right-0 h-48 w-48 rounded-full bg-flare"
-          />
           <TiltPhoto
-            src={volunteer}
-            alt="Volunteer packing food boxes in a warehouse"
-            width={900}
-            height={1200}
+            src={collageRight.url}
+            alt="Collage of a volunteer packing food boxes and a koala clinging to a tree"
+            width={1127}
+            height={1408}
             eager
-            depth={16}
-            rotate={2}
+            bare
+            depth={14}
+            rotate={1.5}
             delay={0.35}
-            from={{ x: 70, rotate: 9 }}
-            className="relative z-10 ml-auto w-[84%] max-w-[440px]"
-          />
-          <TiltPhoto
-            src={koala}
-            alt="Koala clinging to a tree"
-            width={1000}
-            height={900}
-            depth={22}
-            rotate={-4}
-            delay={0.65}
-            from={{ y: 90, rotate: -14 }}
-            className="relative z-20 -mt-28 mr-[8%] w-[72%] max-w-[380px]"
+            from={{ x: 70, rotate: 8 }}
+            className="relative z-10 mx-auto w-full max-w-[520px]"
           />
         </motion.div>
       </div>

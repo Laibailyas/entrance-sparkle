@@ -13,6 +13,8 @@ type Props = {
   delay?: number;
   from?: { x?: number; y?: number; rotate?: number };
   eager?: boolean;
+  /** render without paper frame / grayscale treatment */
+  bare?: boolean;
   children?: ReactNode;
 };
 
@@ -27,6 +29,7 @@ export function TiltPhoto({
   delay = 0,
   from = {},
   eager = false,
+  bare = false,
   children,
 }: Props) {
   const px = useMotionValue(0);
@@ -46,7 +49,7 @@ export function TiltPhoto({
     >
       <motion.div
         data-cursor-hover
-        className="photo-frame relative [transform-style:preserve-3d]"
+        className={`relative [transform-style:preserve-3d] ${bare ? "" : "photo-frame"}`}
         style={{ rotateX, rotateY }}
         whileHover={{ scale: 1.035, z: 40 }}
         transition={{ type: "spring", stiffness: 220, damping: 20 }}
@@ -66,7 +69,7 @@ export function TiltPhoto({
           width={width}
           height={height}
           loading={eager ? "eager" : "lazy"}
-          className="block h-full w-full object-cover grayscale contrast-[1.08]"
+          className={`block h-full w-full object-contain ${bare ? "mix-blend-multiply" : "object-cover grayscale contrast-[1.08]"}`}
         />
         <motion.span
           aria-hidden
