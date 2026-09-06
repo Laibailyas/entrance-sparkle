@@ -71,7 +71,7 @@ export function Hero() {
       </motion.header>
 
       {/* collage stage */}
-      <div className="relative mx-auto grid w-full max-w-[1600px] flex-1 grid-cols-1 items-center gap-10 px-6 py-10 lg:grid-cols-[0.85fr_minmax(560px,1.05fr)_0.85fr] lg:gap-4">
+      <div className="relative mx-auto grid w-full max-w-[1600px] flex-1 grid-cols-1 items-center gap-10 px-6 py-10 lg:grid-cols-[0.8fr_minmax(600px,1.15fr)_0.8fr] lg:gap-4">
         {/* left cluster */}
         <motion.div style={{ x: layerA, y: layerAy }} className="relative order-2 lg:order-1">
           <motion.div
@@ -127,7 +127,7 @@ export function Hero() {
             Together, we can
           </motion.span>
 
-          <h1 className="mt-6 font-display text-[clamp(2.4rem,6.4vw,5.4rem)] leading-[0.92] tracking-tight">
+          <h1 className="mt-6 font-display text-[clamp(2.2rem,4.6vw,4.5rem)] leading-[0.92] tracking-tight">
             <WordsUp text="Let your feed," delay={0.35} />
             <WordsUp text="feed someone" className="text-flare" delay={0.5} />
           </h1>
