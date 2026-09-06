@@ -98,7 +98,7 @@ export function Hero() {
             rotate={-2}
             delay={0.25}
             from={{ x: -70, rotate: -8 }}
-            className="relative z-10 w-[78%] max-w-[420px]"
+            className="relative z-10 w-[86%] max-w-[460px]"
           />
           <TiltPhoto
             src={dog}
@@ -109,7 +109,7 @@ export function Hero() {
             rotate={5}
             delay={0.55}
             from={{ y: 90, rotate: 14 }}
-            className="relative z-20 -mt-24 ml-[32%] w-[62%] max-w-[330px]"
+            className="relative z-20 -mt-24 ml-[32%] w-[70%] max-w-[370px]"
           />
         </motion.div>
 
@@ -240,7 +240,7 @@ export function Hero() {
             rotate={2}
             delay={0.35}
             from={{ x: 70, rotate: 9 }}
-            className="relative z-10 ml-auto w-[76%] max-w-[400px]"
+            className="relative z-10 ml-auto w-[84%] max-w-[440px]"
           />
           <TiltPhoto
             src={koala}
@@ -251,7 +251,7 @@ export function Hero() {
             rotate={-4}
             delay={0.65}
             from={{ y: 90, rotate: -14 }}
-            className="relative z-20 -mt-28 mr-[8%] w-[64%] max-w-[340px]"
+            className="relative z-20 -mt-28 mr-[8%] w-[72%] max-w-[380px]"
           />
         </motion.div>
       </div>
