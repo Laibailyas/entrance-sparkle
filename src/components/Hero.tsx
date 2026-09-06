@@ -71,42 +71,18 @@ export function Hero() {
       <div className="relative mx-auto grid w-full max-w-[1600px] flex-1 grid-cols-1 items-center gap-10 px-6 py-10 lg:grid-cols-[0.8fr_minmax(600px,1.15fr)_0.8fr] lg:gap-4">
         {/* left cluster */}
         <motion.div style={{ x: layerA, y: layerAy }} className="relative order-2 lg:order-1">
-          <motion.div
-            aria-hidden
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.15, ease }}
-            className="absolute -top-6 left-24 h-48 w-48 rounded-full bg-flare md:h-60 md:w-60"
-          />
-          <motion.div
-            aria-hidden
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="absolute right-2 top-10 hidden h-28 w-40 bg-[repeating-linear-gradient(0deg,var(--ink)_0_4px,transparent_4px_9px)] md:block"
-          />
           <TiltPhoto
-            src={firefighter}
-            alt="Firefighter facing a burning forest as a helicopter drops water"
-            width={900}
-            height={1200}
+            src={collageLeft.url}
+            alt="Collage of a firefighter facing a wildfire and a rescued dog held by a volunteer"
+            width={1127}
+            height={1408}
             eager
-            depth={16}
-            rotate={-2}
+            bare
+            depth={14}
+            rotate={-1.5}
             delay={0.25}
             from={{ x: -70, rotate: -8 }}
-            className="relative z-10 w-[86%] max-w-[460px]"
-          />
-          <TiltPhoto
-            src={dog}
-            alt="Rescued dog held close by a volunteer"
-            width={1000}
-            height={800}
-            depth={22}
-            rotate={5}
-            delay={0.55}
-            from={{ y: 90, rotate: 14 }}
-            className="relative z-20 -mt-24 ml-[32%] w-[70%] max-w-[370px]"
+            className="relative z-10 mx-auto w-full max-w-[520px]"
           />
         </motion.div>
 
