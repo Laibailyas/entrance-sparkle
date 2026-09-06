@@ -213,42 +213,18 @@ export function Hero() {
 
         {/* right cluster */}
         <motion.div style={{ x: layerB, y: layerBy }} className="relative order-3">
-          <motion.div
-            aria-hidden
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.3, ease }}
-            className="absolute right-2 top-4 h-24 w-40 bg-flare"
-          />
-          <motion.div
-            aria-hidden
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.6, ease }}
-            className="absolute bottom-20 right-0 h-48 w-48 rounded-full bg-flare"
-          />
           <TiltPhoto
-            src={volunteer}
-            alt="Volunteer packing food boxes in a warehouse"
-            width={900}
-            height={1200}
+            src={collageRight.url}
+            alt="Collage of a volunteer packing food boxes and a koala clinging to a tree"
+            width={1127}
+            height={1408}
             eager
-            depth={16}
-            rotate={2}
+            bare
+            depth={14}
+            rotate={1.5}
             delay={0.35}
-            from={{ x: 70, rotate: 9 }}
-            className="relative z-10 ml-auto w-[84%] max-w-[440px]"
-          />
-          <TiltPhoto
-            src={koala}
-            alt="Koala clinging to a tree"
-            width={1000}
-            height={900}
-            depth={22}
-            rotate={-4}
-            delay={0.65}
-            from={{ y: 90, rotate: -14 }}
-            className="relative z-20 -mt-28 mr-[8%] w-[72%] max-w-[380px]"
+            from={{ x: 70, rotate: 8 }}
+            className="relative z-10 mx-auto w-full max-w-[520px]"
           />
         </motion.div>
       </div>
