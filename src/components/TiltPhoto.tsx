@@ -13,6 +13,8 @@ type Props = {
   delay?: number;
   from?: { x?: number; y?: number; rotate?: number };
   eager?: boolean;
+  /** render without paper frame / grayscale treatment */
+  bare?: boolean;
   children?: ReactNode;
 };
 
